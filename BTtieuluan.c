@@ -181,6 +181,32 @@ void XoaCuoi(node **head)
     temp->next=NULL;
     free(NodeCuoi);
 }
+void XoaGiua(node **head, int m)
+{
+    int n=SoLuongSinhVien(*head);
+    if(m<1||m>n)
+    {
+        return;
+    }
+    if(m==1)
+    {
+        XoaDau(head);
+        return;
+    }
+    if(m==n)
+    {
+        XoaCuoi(head);
+        return;
+    }
+    node *temp=*head;
+    for(int i=1;i<=m-2;i++)
+    {
+        temp=temp->next;
+    }
+    node *xoa=temp->next;
+    temp->next=temp->next->next;
+    free(xoa);
+}
 int main()
 {
     int n;
