@@ -207,6 +207,13 @@ void XoaGiua(node **head, int m)
     temp->next=temp->next->next;
     free(xoa);
 }
+void XemGiaTriODau(node *head)
+{
+    if(head!=NULL)
+    {
+        printf("Ho Ten: %sMSSV: %sLop: %sDiem GPA: %.2f\n", head->a.name, head->a.MaSV, head->a.class, head->a.GPA);
+    }
+}
 int main()
 {
     int n;
